@@ -46,46 +46,19 @@ const featuredProjects = [
 ];
 
 const otherProjects = [
-  {
-    name: "Calculator",
-    github: "https://github.com/m-i-shakib/Calculator",
-  },
-  {
-    name: "Basic AI",
-    github: "https://github.com/m-i-shakib/basic-ai",
-  },
-  {
-    name: "Python All",
-    github: "https://github.com/m-i-shakib/python-all",
-  },
-  {
-    name: "C Plus",
-    github: "https://github.com/m-i-shakib/c-plus",
-  },
-  {
-    name: "C Code",
-    github: "https://github.com/m-i-shakib/c-code",
-  },
-  {
-    name: "Networking",
-    github: "https://github.com/m-i-shakib/networking",
-  },
+  { name: "Calculator", github: "https://github.com/m-i-shakib/Calculator" },
+  { name: "Basic AI", github: "https://github.com/m-i-shakib/basic-ai" },
+  { name: "Python All", github: "https://github.com/m-i-shakib/python-all" },
+  { name: "C Plus", github: "https://github.com/m-i-shakib/c-plus" },
+  { name: "C Code", github: "https://github.com/m-i-shakib/c-code" },
+  { name: "Networking", github: "https://github.com/m-i-shakib/networking" },
   {
     name: "Cisco Packet Tracer Labs",
     github: "https://github.com/m-i-shakib/cisco-packet-tracer-labs",
   },
-  {
-    name: "Voting System",
-    github: "https://github.com/m-i-shakib/Voting_System",
-  },
-  {
-    name: "Latex",
-    github: "https://github.com/m-i-shakib/Latex",
-  },
-  {
-    name: "Goku",
-    github: "https://github.com/m-i-shakib/goku",
-  },
+  { name: "Voting System", github: "https://github.com/m-i-shakib/Voting_System" },
+  { name: "Latex", github: "https://github.com/m-i-shakib/Latex" },
+  { name: "Goku", github: "https://github.com/m-i-shakib/goku" },
 ];
 
 function App() {
@@ -206,7 +179,6 @@ function App() {
 
       <section className="about" id="about">
         <h2>About Me</h2>
-
         <p>
           I am a Computer Science student interested in software development,
           backend development, mobile app development, machine learning, and
@@ -250,7 +222,6 @@ function App() {
           {featuredProjects.map((project) => (
             <div className="project-card" key={project.name}>
               <h3>{project.name}</h3>
-
               <p>{project.description}</p>
 
               <div className="tech-list">
