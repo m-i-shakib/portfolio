@@ -1,5 +1,6 @@
 import "./App.css";
 import BinaryBackground from "./BinaryBackground";
+import profilePhoto from "./assets/shakib-profile.jpg";
 
 const codeforcesProfile = "https://codeforces.com/profile/m_i_shakib__";
 
@@ -139,7 +140,9 @@ function App() {
       <main className="site-content">
         <header className="site-header">
           <a href="#home" className="logo">
-            <span className="logo-globe">MS</span>
+            <div className="logo-photo-wrap">
+              <img src={profilePhoto} alt="Md Moinul Islam Shakib" className="logo-photo" />
+            </div>
             <div>
               <strong>Shakib Portfolio</strong>
             </div>
