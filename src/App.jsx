@@ -1,6 +1,8 @@
 import "./App.css";
 import BinaryBackground from "./BinaryBackground";
 
+const codeforcesProfile = "https://codeforces.com/profile/m_i_shakib__";
+
 const featuredProjects = [
   {
     name: "Good Appetite Food Delivery App",
@@ -112,13 +114,13 @@ const process = [
   },
   {
     step: "Step 3",
-    title: "See My Practice Areas",
-    text: "Review backend, AI, algorithm, networking, and SQA-related work.",
+    title: "See Competitive Programming",
+    text: "Open my Codeforces profile and review my problem-solving practice.",
   },
   {
     step: "Step 4",
     title: "Connect",
-    text: "Use GitHub or LinkedIn to view more details or contact me.",
+    text: "Use GitHub, LinkedIn, or Codeforces to view more details about my work.",
   },
 ];
 
@@ -126,7 +128,7 @@ const stats = [
   { number: "19+", label: "GitHub Repositories" },
   { number: "6+", label: "Featured Projects" },
   { number: "15+", label: "Technical Skills" },
-  { number: "SQA", label: "Career Focus" },
+  { number: "CF", label: "Codeforces Profile" },
 ];
 
 function App() {
@@ -149,12 +151,11 @@ function App() {
             <a href="#about">About</a>
             <a href="#expertise">Expertise</a>
             <a href="#projects">Projects</a>
+            <a href={codeforcesProfile} target="_blank" rel="noreferrer">
+              Codeforces
+            </a>
             <a href="#contact">Contact</a>
           </nav>
-
-          <a href="#contact" className="header-cta">
-            Book Free Consultation
-          </a>
         </header>
 
         <section className="hero" id="home">
@@ -165,9 +166,9 @@ function App() {
 
             <p>
               I am Md Moinul Islam Shakib, a CSE student focused on software
-              development, backend engineering, AI projects, and software quality
-              assurance. This portfolio connects my technical skills with real
-              project evidence.
+              development, backend engineering, AI projects, software quality
+              assurance, and problem-solving practice. This portfolio connects
+              my technical skills with real project evidence.
             </p>
 
             <div className="hero-actions">
@@ -181,6 +182,14 @@ function App() {
                 className="secondary-btn"
               >
                 View GitHub
+              </a>
+              <a
+                href={codeforcesProfile}
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-btn"
+              >
+                Codeforces
               </a>
             </div>
           </div>
@@ -214,13 +223,13 @@ function App() {
               <p>
                 I am a Computer Science student focused on software development,
                 backend development, mobile app development, machine learning,
-                and software quality assurance. I learn by building real
-                projects, fixing problems, and improving features step by step.
+                software quality assurance, and competitive programming practice.
               </p>
               <p>
                 My goal is to build a professional software and SQA career by
                 showing practical work through GitHub projects, clean portfolio
-                presentation, and continuous technical improvement.
+                presentation, Codeforces problem-solving practice, and continuous
+                technical improvement.
               </p>
             </div>
 
@@ -228,7 +237,7 @@ function App() {
               <h3>Apply skills to real projects — 100% evidence-based portfolio.</h3>
               <p>
                 This portfolio is built to show my real work, project structure,
-                tools, and technical direction.
+                tools, GitHub activity, and problem-solving direction.
               </p>
             </div>
           </div>
@@ -329,7 +338,7 @@ function App() {
           <div className="contact-banner">
             <div>
               <p>Ready to view my work?</p>
-              <h2>Explore my GitHub projects and professional profile.</h2>
+              <h2>Explore my GitHub, LinkedIn, and Codeforces profile.</h2>
             </div>
 
             <div className="contact-actions">
@@ -347,6 +356,9 @@ function App() {
               >
                 LinkedIn
               </a>
+              <a href={codeforcesProfile} target="_blank" rel="noreferrer">
+                Codeforces
+              </a>
             </div>
           </div>
         </section>
@@ -361,6 +373,9 @@ function App() {
             <a href="#home">Home</a>
             <a href="#expertise">Expertise</a>
             <a href="#projects">Projects</a>
+            <a href={codeforcesProfile} target="_blank" rel="noreferrer">
+              Codeforces
+            </a>
             <a href="#contact">Contact</a>
           </div>
         </footer>
