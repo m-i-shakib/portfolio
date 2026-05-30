@@ -1,0 +1,105 @@
+.binary-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(56, 189, 248, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 22%, rgba(37, 99, 235, 0.18), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.12), transparent 42%),
+    linear-gradient(135deg, #020817 0%, #071224 48%, #08172f 100%);
+}
+
+.binary-background canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.42;
+  filter: saturate(1.15);
+}
+
+.binary-blue-glow {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.12), transparent 28%),
+    radial-gradient(circle at 70% 60%, rgba(37, 99, 235, 0.1), transparent 30%);
+  filter: blur(35px);
+  animation: binaryGlowMove 9s ease-in-out infinite alternate;
+}
+
+.binary-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(2, 8, 23, 0.2),
+      rgba(2, 8, 23, 0.46),
+      rgba(2, 8, 23, 0.72)
+    ),
+    radial-gradient(circle at center, transparent 0%, rgba(2, 8, 23, 0.54) 70%);
+}
+
+.binary-noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.16;
+}
+
+.site-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  background: transparent !important;
+}
+
+.section-shell {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.08), transparent 26%),
+    rgba(8, 17, 32, 0.7) !important;
+  backdrop-filter: blur(7px);
+}
+
+.navbar {
+  background: rgba(8, 17, 32, 0.58) !important;
+}
+
+.terminal-card,
+.service-card,
+.project-card,
+.contact-card,
+.stat-card,
+.other-list a {
+  background: rgba(13, 24, 42, 0.74) !important;
+  backdrop-filter: blur(15px);
+}
+
+@keyframes binaryGlowMove {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(2%, 2%, 0) scale(1.05);
+  }
+}
+
+@media (max-width: 700px) {
+  .binary-background canvas {
+    opacity: 0.3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .binary-blue-glow {
+    animation: none !important;
+  }
+}

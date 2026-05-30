@@ -1,4 +1,5 @@
 import "./App.css";
+import BinaryBackground from "./BinaryBackground";
 
 const featuredProjects = [
   {
@@ -110,293 +111,297 @@ const services = [
 
 function App() {
   return (
-    <main>
-      <section className="hero" id="home">
-        <div className="hero-grid"></div>
-        <div className="hero-glass hero-glass-one"></div>
-        <div className="hero-glass hero-glass-two"></div>
+    <>
+      <BinaryBackground />
 
-        <nav className="navbar">
-          <a className="brand" href="#home" aria-label="Go to home">
-            <span className="brand-mark">S</span>
-            <span>Shakib</span>
-          </a>
+      <main className="site-content">
+        <section className="hero" id="home">
+          <div className="hero-grid"></div>
+          <div className="hero-glass hero-glass-one"></div>
+          <div className="hero-glass hero-glass-two"></div>
 
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+          <nav className="navbar">
+            <a className="brand" href="#home" aria-label="Go to home">
+              <span className="brand-mark">S</span>
+              <span>Shakib</span>
+            </a>
 
-        <div className="hero-layout">
-          <div className="hero-copy">
-            <div className="status-pill">
-              <span className="live-dot"></span>
-              Portfolio Live · Open to Software & SQA Opportunities
+            <div className="nav-links">
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </nav>
+
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <div className="status-pill">
+                <span className="live-dot"></span>
+                Portfolio Live · Open to Software & SQA Opportunities
+              </div>
+
+              <p className="eyebrow">CSE Student · Software Developer · SQA Learner</p>
+
+              <h1>
+                Md Moinul Islam <span>Shakib</span>
+              </h1>
+
+              <p className="intro">
+                I build practical software projects using Java, Python, React,
+                React Native, Spring Boot, MySQL, Flask, and Machine Learning.
+                This portfolio presents my academic, backend, AI, web, and
+                programming projects.
+              </p>
+
+              <div className="hero-buttons">
+                <a href="#projects" className="primary-btn">
+                  View Projects
+                </a>
+
+                <a
+                  href="https://github.com/m-i-shakib"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-btn"
+                >
+                  GitHub Profile
+                </a>
+              </div>
+
+              <div className="stats-row">
+                {stats.map((item) => (
+                  <div className="stat-card" key={item.label}>
+                    <strong>{item.value}</strong>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <p className="eyebrow">CSE Student · Software Developer · SQA Learner</p>
+            <div className="hero-visual" aria-label="Animated coding interface">
+              <div className="orbit orbit-one">
+                <span>React</span>
+              </div>
+              <div className="orbit orbit-two">
+                <span>Java</span>
+              </div>
+              <div className="orbit orbit-three">
+                <span>ML</span>
+              </div>
 
-            <h1>
-              Md Moinul Islam <span>Shakib</span>
-            </h1>
+              <div className="terminal-card">
+                <div className="terminal-top">
+                  <div className="terminal-dots">
+                    <span className="dot red"></span>
+                    <span className="dot yellow"></span>
+                    <span className="dot green"></span>
+                  </div>
+                  <p>shakib.dev / portfolio.jsx</p>
+                </div>
 
-            <p className="intro">
-              I build practical software projects using Java, Python, React,
-              React Native, Spring Boot, MySQL, Flask, and Machine Learning.
-              This portfolio presents my academic, backend, AI, web, and
-              programming projects.
+                <div className="terminal-body">
+                  <p>
+                    <span className="code-key">const</span>{" "}
+                    <span className="code-var">developer</span> = {"{"}
+                  </p>
+                  <p className="code-indent">
+                    <span className="code-prop">name</span>:{" "}
+                    <span className="code-string">"Shakib"</span>,
+                  </p>
+                  <p className="code-indent">
+                    <span className="code-prop">role</span>:{" "}
+                    <span className="code-string">"Software Developer"</span>,
+                  </p>
+                  <p className="code-indent">
+                    <span className="code-prop">stack</span>: [
+                    <span className="code-string">"React"</span>,{" "}
+                    <span className="code-string">"Spring Boot"</span>,{" "}
+                    <span className="code-string">"Python"</span>],
+                  </p>
+                  <p className="code-indent">
+                    <span className="code-prop">testing</span>:{" "}
+                    <span className="code-string">"SQA + API Testing"</span>
+                  </p>
+                  <p>{"};"}</p>
+
+                  <p className="typing-line">deploy("portfolio")</p>
+
+                  <div className="dashboard-card">
+                    <div className="dashboard-row">
+                      <span>Build</span>
+                      <strong>92%</strong>
+                    </div>
+                    <div className="progress-bar">
+                      <div className="progress-fill fill-one"></div>
+                    </div>
+
+                    <div className="dashboard-row">
+                      <span>Testing</span>
+                      <strong>88%</strong>
+                    </div>
+                    <div className="progress-bar">
+                      <div className="progress-fill fill-two"></div>
+                    </div>
+
+                    <div className="mini-terminal">
+                      <span>$</span> npm run dev
+                      <em>Ready in 673ms</em>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="floating-card card-one">
+                <strong>API</strong>
+                <span>Postman · REST</span>
+              </div>
+              <div className="floating-card card-two">
+                <strong>Backend</strong>
+                <span>Spring Boot</span>
+              </div>
+              <div className="floating-card card-three">
+                <strong>AI</strong>
+                <span>Python · ML</span>
+              </div>
+            </div>
+          </div>
+
+          <a className="scroll-cue" href="#about" aria-label="Scroll to about">
+            <span></span>
+          </a>
+        </section>
+
+        <section className="about section-shell" id="about">
+          <div className="section-heading">
+            <p>About</p>
+            <h2>Building skills through real projects, not just theory.</h2>
+          </div>
+
+          <div className="about-grid">
+            <p>
+              I am a Computer Science student interested in software development,
+              backend development, mobile app development, machine learning, and
+              software quality assurance. I like learning by building real projects,
+              fixing problems, and improving features step by step.
             </p>
 
-            <div className="hero-buttons">
-              <a href="#projects" className="primary-btn">
-                View Projects
-              </a>
+            <div className="service-grid">
+              {services.map((item) => (
+                <article className="service-card" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
+        <section className="skills section-shell" id="skills">
+          <div className="section-heading">
+            <p>Skills</p>
+            <h2>My current technical stack.</h2>
+          </div>
+
+          <div className="skill-list">
+            {skills.map((skill) => (
+              <span key={skill}>{skill}</span>
+            ))}
+          </div>
+        </section>
+
+        <section className="projects section-shell" id="projects">
+          <div className="section-heading">
+            <p>Projects</p>
+            <h2>Featured work from my GitHub.</h2>
+          </div>
+
+          <p className="section-note">
+            These are my strongest projects, showing full-stack development,
+            backend work, AI practice, Java programming, and software engineering
+            concepts.
+          </p>
+
+          <div className="project-grid">
+            {featuredProjects.map((project) => (
+              <article className="project-card" key={project.name}>
+                <div className="project-top">
+                  <span>{project.type}</span>
+                  <a href={project.github} target="_blank" rel="noreferrer">
+                    GitHub
+                  </a>
+                </div>
+
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+
+                <div className="tech-list">
+                  {project.tech.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="other-projects section-shell">
+          <div className="section-heading">
+            <p>Repository List</p>
+            <h2>Other GitHub Projects</h2>
+          </div>
+
+          <p className="section-note">
+            More practice projects covering programming, AI, networking, LaTeX,
+            and academic work.
+          </p>
+
+          <div className="other-list">
+            {otherProjects.map((project) => (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                key={project.name}
+              >
+                {project.name}
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="contact section-shell" id="contact">
+          <div className="contact-card">
+            <div>
+              <p className="eyebrow">Contact</p>
+              <h2>Want to see my code or connect with me?</h2>
+              <p>
+                You can view my GitHub projects and professional profile using
+                the links below.
+              </p>
+            </div>
+
+            <div className="contact-links">
               <a
                 href="https://github.com/m-i-shakib"
                 target="_blank"
                 rel="noreferrer"
-                className="secondary-btn"
               >
-                GitHub Profile
+                GitHub
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/moinul-islam-shakib-7687201b9/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
               </a>
             </div>
-
-            <div className="stats-row">
-              {stats.map((item) => (
-                <div className="stat-card" key={item.label}>
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
-
-          <div className="hero-visual" aria-label="Animated coding interface">
-            <div className="orbit orbit-one">
-              <span>React</span>
-            </div>
-            <div className="orbit orbit-two">
-              <span>Java</span>
-            </div>
-            <div className="orbit orbit-three">
-              <span>ML</span>
-            </div>
-
-            <div className="terminal-card">
-              <div className="terminal-top">
-                <div className="terminal-dots">
-                  <span className="dot red"></span>
-                  <span className="dot yellow"></span>
-                  <span className="dot green"></span>
-                </div>
-                <p>shakib.dev / portfolio.jsx</p>
-              </div>
-
-              <div className="terminal-body">
-                <p>
-                  <span className="code-key">const</span>{" "}
-                  <span className="code-var">developer</span> = {"{"}
-                </p>
-                <p className="code-indent">
-                  <span className="code-prop">name</span>:{" "}
-                  <span className="code-string">"Shakib"</span>,
-                </p>
-                <p className="code-indent">
-                  <span className="code-prop">role</span>:{" "}
-                  <span className="code-string">"Software Developer"</span>,
-                </p>
-                <p className="code-indent">
-                  <span className="code-prop">stack</span>: [
-                  <span className="code-string">"React"</span>,{" "}
-                  <span className="code-string">"Spring Boot"</span>,{" "}
-                  <span className="code-string">"Python"</span>],
-                </p>
-                <p className="code-indent">
-                  <span className="code-prop">testing</span>:{" "}
-                  <span className="code-string">"SQA + API Testing"</span>
-                </p>
-                <p>{"};"}</p>
-
-                <p className="typing-line">deploy("portfolio")</p>
-
-                <div className="dashboard-card">
-                  <div className="dashboard-row">
-                    <span>Build</span>
-                    <strong>92%</strong>
-                  </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill fill-one"></div>
-                  </div>
-
-                  <div className="dashboard-row">
-                    <span>Testing</span>
-                    <strong>88%</strong>
-                  </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill fill-two"></div>
-                  </div>
-
-                  <div className="mini-terminal">
-                    <span>$</span> npm run dev
-                    <em>Ready in 673ms</em>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="floating-card card-one">
-              <strong>API</strong>
-              <span>Postman · REST</span>
-            </div>
-            <div className="floating-card card-two">
-              <strong>Backend</strong>
-              <span>Spring Boot</span>
-            </div>
-            <div className="floating-card card-three">
-              <strong>AI</strong>
-              <span>Python · ML</span>
-            </div>
-          </div>
-        </div>
-
-        <a className="scroll-cue" href="#about" aria-label="Scroll to about">
-          <span></span>
-        </a>
-      </section>
-
-      <section className="about section-shell" id="about">
-        <div className="section-heading">
-          <p>About</p>
-          <h2>Building skills through real projects, not just theory.</h2>
-        </div>
-
-        <div className="about-grid">
-          <p>
-            I am a Computer Science student interested in software development,
-            backend development, mobile app development, machine learning, and
-            software quality assurance. I like learning by building real projects,
-            fixing problems, and improving features step by step.
-          </p>
-
-          <div className="service-grid">
-            {services.map((item) => (
-              <article className="service-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="skills section-shell" id="skills">
-        <div className="section-heading">
-          <p>Skills</p>
-          <h2>My current technical stack.</h2>
-        </div>
-
-        <div className="skill-list">
-          {skills.map((skill) => (
-            <span key={skill}>{skill}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="projects section-shell" id="projects">
-        <div className="section-heading">
-          <p>Projects</p>
-          <h2>Featured work from my GitHub.</h2>
-        </div>
-
-        <p className="section-note">
-          These are my strongest projects, showing full-stack development,
-          backend work, AI practice, Java programming, and software engineering
-          concepts.
-        </p>
-
-        <div className="project-grid">
-          {featuredProjects.map((project) => (
-            <article className="project-card" key={project.name}>
-              <div className="project-top">
-                <span>{project.type}</span>
-                <a href={project.github} target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
-              </div>
-
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-
-              <div className="tech-list">
-                {project.tech.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="other-projects section-shell">
-        <div className="section-heading">
-          <p>Repository List</p>
-          <h2>Other GitHub Projects</h2>
-        </div>
-
-        <p className="section-note">
-          More practice projects covering programming, AI, networking, LaTeX,
-          and academic work.
-        </p>
-
-        <div className="other-list">
-          {otherProjects.map((project) => (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              key={project.name}
-            >
-              {project.name}
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="contact section-shell" id="contact">
-        <div className="contact-card">
-          <div>
-            <p className="eyebrow">Contact</p>
-            <h2>Want to see my code or connect with me?</h2>
-            <p>
-              You can view my GitHub projects and professional profile using
-              the links below.
-            </p>
-          </div>
-
-          <div className="contact-links">
-            <a
-              href="https://github.com/m-i-shakib"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/moinul-islam-shakib-7687201b9/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
 
