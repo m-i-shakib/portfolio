@@ -143,7 +143,7 @@ function App() {
               <img src={profilePhoto} alt="Md Moinul Islam Shakib" className="logo-photo" />
             </div>
             <div>
-              <strong>Shakib Portfolio</strong>
+              <strong>m_i_shakib_ Portfolio</strong>
             </div>
           </a>
 
@@ -352,7 +352,7 @@ function App() {
 
         <footer className="footer">
           <div>
-            <h3>Shakib Portfolio</h3>
+            <h3>m_i_shakib_ Portfolio</h3>
           </div>
 
           <div className="footer-links">

@@ -88,8 +88,8 @@ a {
 .logo strong {
   display: block;
   color: #22d3ee;
-  font-size: 28px;
-  line-height: 0.95;
+  font-size: 26px;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -644,7 +644,7 @@ a {
   }
 
   .logo strong {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .hero-card p {
