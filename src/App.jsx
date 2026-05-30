@@ -92,6 +92,8 @@ function App() {
   return (
     <main>
       <section className="hero">
+        <div className="hero-overlay"></div>
+
         <nav>
           <h2>Shakib</h2>
 
@@ -103,31 +105,101 @@ function App() {
           </div>
         </nav>
 
-        <div className="hero-content">
-          <p className="tag">CSE Student · Software Developer · SQA Learner</p>
+        <div className="hero-layout">
+          <div className="hero-text">
+            <p className="tag">CSE Student · Software Developer · SQA Learner</p>
 
-          <h1>Md Moinul Islam Shakib</h1>
+            <h1>Md Moinul Islam Shakib</h1>
 
-          <p className="intro">
-            I build practical software projects using Java, Python, React,
-            React Native, Spring Boot, MySQL, Flask, and Machine Learning. This
-            portfolio presents my academic, backend, AI, web, and programming
-            projects.
-          </p>
+            <p className="intro">
+              I build practical software projects using Java, Python, React,
+              React Native, Spring Boot, MySQL, Flask, and Machine Learning.
+              This portfolio presents my academic, backend, AI, web, and
+              programming projects.
+            </p>
 
-          <div className="hero-buttons">
-            <a href="#projects" className="primary-btn">
-              View Projects
-            </a>
+            <div className="hero-buttons">
+              <a href="#projects" className="primary-btn">
+                View Projects
+              </a>
 
-            <a
-              href="https://github.com/m-i-shakib"
-              target="_blank"
-              rel="noreferrer"
-              className="secondary-btn"
-            >
-              GitHub Profile
-            </a>
+              <a
+                href="https://github.com/m-i-shakib"
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-btn"
+              >
+                GitHub Profile
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-visual">
+            <div className="glow glow-one"></div>
+            <div className="glow glow-two"></div>
+
+            <div className="floating-badge badge-one">&lt;/&gt; Code</div>
+            <div className="floating-badge badge-two">Spring Boot</div>
+            <div className="floating-badge badge-three">React</div>
+            <div className="floating-badge badge-four">ML</div>
+
+            <div className="terminal-card">
+              <div className="terminal-top">
+                <div className="terminal-dots">
+                  <span className="dot red"></span>
+                  <span className="dot yellow"></span>
+                  <span className="dot green"></span>
+                </div>
+                <p>portfolio.jsx</p>
+              </div>
+
+              <div className="terminal-body">
+                <p>
+                  <span className="code-key">const</span>{" "}
+                  <span className="code-var">developer</span> = {"{"}
+                </p>
+                <p className="code-indent">
+                  <span className="code-prop">name</span>:{" "}
+                  <span className="code-string">"Shakib"</span>,
+                </p>
+                <p className="code-indent">
+                  <span className="code-prop">role</span>:{" "}
+                  <span className="code-string">"Software Developer"</span>,
+                </p>
+                <p className="code-indent">
+                  <span className="code-prop">focus</span>: [
+                  <span className="code-string">"Java"</span>,{" "}
+                  <span className="code-string">"Python"</span>,{" "}
+                  <span className="code-string">"React"</span>]
+                </p>
+                <p>{"}"}</p>
+
+                <p className="typing-line">deploy("portfolio")</p>
+
+                <div className="status-box">
+                  <div className="status-row">
+                    <span>Build Progress</span>
+                    <span>92%</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div className="progress-fill fill-one"></div>
+                  </div>
+
+                  <div className="status-row">
+                    <span>Testing</span>
+                    <span>88%</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div className="progress-fill fill-two"></div>
+                  </div>
+
+                  <div className="status-row">
+                    <span>Deployment</span>
+                    <span>Live</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
