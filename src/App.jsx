@@ -142,7 +142,6 @@ function App() {
             <span className="logo-globe">MS</span>
             <div>
               <strong>Shakib Portfolio</strong>
-              <small>Design Your Career with Code</small>
             </div>
           </a>
 
@@ -160,10 +159,6 @@ function App() {
 
         <section className="hero" id="home">
           <div className="hero-card">
-            <p className="hero-kicker">Your Software Talent Gateway</p>
-
-            <h1>Unlock your future with project-driven learning.</h1>
-
             <p>
               I am Md Moinul Islam Shakib, a CSE student focused on software
               development, backend engineering, AI projects, software quality
@@ -213,7 +208,6 @@ function App() {
 
         <section className="about section-block" id="about">
           <div className="section-title">
-            <p>About Me</p>
             <h2>About Shakib</h2>
           </div>
 
@@ -253,7 +247,6 @@ function App() {
 
         <section className="expertise section-block" id="expertise">
           <div className="section-title centered">
-            <p>GTGS Style Services</p>
             <h2>What I am building my career around.</h2>
           </div>
 
@@ -271,7 +264,6 @@ function App() {
 
         <section className="projects section-block" id="projects">
           <div className="section-title centered">
-            <p>Featured Work</p>
             <h2>Projects that show my practical skills.</h2>
           </div>
 
@@ -298,7 +290,6 @@ function App() {
 
         <section className="process section-block">
           <div className="section-title centered">
-            <p>How It Works</p>
             <h2>How to review my portfolio.</h2>
           </div>
 
@@ -315,7 +306,6 @@ function App() {
 
         <section className="other-projects section-block">
           <div className="section-title centered">
-            <p>Repository List</p>
             <h2>Other GitHub Projects</h2>
           </div>
 
@@ -336,7 +326,6 @@ function App() {
         <section className="contact section-block" id="contact">
           <div className="contact-banner">
             <div>
-              <p>Ready to view my work?</p>
               <h2>Explore my GitHub, LinkedIn, and Codeforces profile.</h2>
             </div>
 
@@ -365,7 +354,6 @@ function App() {
         <footer className="footer">
           <div>
             <h3>Shakib Portfolio</h3>
-            <p>Design Your Career with Code</p>
           </div>
 
           <div className="footer-links">

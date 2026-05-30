@@ -87,11 +87,7 @@ a {
 }
 
 .logo small {
-  display: block;
-  color: #ffffff;
-  font-size: 14px;
-  margin-top: 7px;
-  letter-spacing: 0.05em;
+  display: none;
 }
 
 .nav-menu {
@@ -145,29 +141,19 @@ a {
 }
 
 .hero-kicker {
-  margin: 0 0 15px;
-  font-size: 24px;
-  line-height: 1.25;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  display: none;
 }
 
 .hero h1 {
-  margin: 0;
-  max-width: 760px;
-  color: #ffffff;
-  font-size: 32px;
-  line-height: 1.3;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: none;
 }
 
-.hero-card p:not(.hero-kicker) {
+.hero-card p {
   max-width: 690px;
-  margin: 18px 0 0;
+  margin: 0;
   color: #ffffff;
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 1.75;
   font-weight: 600;
 }
 
@@ -201,7 +187,6 @@ a {
   transform: translateY(-3px);
 }
 
-/* fixed feature section */
 .feature-strip {
   padding: 76px 13% 86px;
   background: var(--pale);
@@ -296,12 +281,7 @@ a {
 
 .section-title p,
 .contact-banner > div > p {
-  margin: 0 0 12px;
-  color: var(--teal);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 13px;
-  font-weight: 900;
+  display: none;
 }
 
 .section-title h2,
@@ -572,8 +552,7 @@ a {
 }
 
 .footer p {
-  color: #cbd5e1;
-  margin-top: 7px;
+  display: none;
 }
 
 .footer-links {
@@ -681,12 +660,8 @@ a {
     font-size: 22px;
   }
 
-  .hero h1 {
-    font-size: 25px;
-  }
-
-  .hero-kicker {
-    font-size: 19px;
+  .hero-card p {
+    font-size: 16px;
   }
 
   .section-title h2,
