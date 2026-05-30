@@ -74,18 +74,28 @@ const expertise = [
     text:
       "Build web, mobile, and backend projects using React, React Native, Java, Spring Boot, Python, Flask, and MySQL.",
     icon: "01",
+    color: "blue",
   },
   {
     title: "SQA & Testing",
     text:
       "Practice manual testing, API testing with Postman, Selenium basics, test case design, bug reporting, and software quality workflow.",
     icon: "02",
+    color: "green",
   },
   {
     title: "AI & Academic Projects",
     text:
       "Work with AI search algorithms, machine learning concepts, research-oriented projects, and practical academic implementation.",
     icon: "03",
+    color: "yellow",
+  },
+  {
+    title: "Career Portfolio",
+    text:
+      "Show projects, GitHub repositories, technical skills, and professional profile in a clean portfolio format.",
+    icon: "04",
+    color: "orange",
   },
 ];
 
@@ -127,9 +137,9 @@ function App() {
       <main className="site-content">
         <header className="site-header">
           <a href="#home" className="logo">
-            <span>MS</span>
+            <span className="logo-globe">MS</span>
             <div>
-              <strong>Shakib</strong>
+              <strong>Shakib Portfolio</strong>
               <small>Design Your Career with Code</small>
             </div>
           </a>
@@ -143,26 +153,26 @@ function App() {
           </nav>
 
           <a href="#contact" className="header-cta">
-            Contact Me
+            Book Free Consultation
           </a>
         </header>
 
         <section className="hero" id="home">
-          <div className="hero-content">
-            <p className="hero-kicker">Your Software & SQA Portfolio Gateway</p>
+          <div className="hero-card">
+            <p className="hero-kicker">Your Software Talent Gateway</p>
 
-            <h1>Build. Test. Improve. Grow with real projects.</h1>
+            <h1>Unlock your future with project-driven learning.</h1>
 
-            <p className="hero-text">
+            <p>
               I am Md Moinul Islam Shakib, a CSE student focused on software
               development, backend engineering, AI projects, and software quality
-              assurance. This portfolio shows my project work, technical skills,
-              and career preparation.
+              assurance. This portfolio connects my technical skills with real
+              project evidence.
             </p>
 
             <div className="hero-actions">
               <a href="#projects" className="primary-btn">
-                View My Projects
+                Find My Projects
               </a>
               <a
                 href="https://github.com/m-i-shakib"
@@ -170,67 +180,58 @@ function App() {
                 rel="noreferrer"
                 className="secondary-btn"
               >
-                Find My GitHub
+                View GitHub
               </a>
             </div>
+          </div>
+        </section>
 
-            <div className="hero-feature-grid">
-              <article>
-                <span>01</span>
-                <h3>Full-Stack Projects</h3>
-                <p>Frontend, backend, database, API, and deployment practice.</p>
-              </article>
-              <article>
-                <span>02</span>
-                <h3>AI-Powered Work</h3>
-                <p>Machine learning, AI search algorithms, and academic AI projects.</p>
-              </article>
-              <article>
-                <span>03</span>
-                <h3>SQA Career Focus</h3>
-                <p>Manual testing, API testing, Selenium basics, and bug reports.</p>
-              </article>
-            </div>
+        <section className="feature-strip">
+          {expertise.map((item) => (
+            <article className={`feature-card ${item.color}`} key={item.title}>
+              <span>{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+
+          <div className="feature-heading">
+            <h2>Explore software development & career opportunities.</h2>
+            <a href="#projects" className="journey-btn">
+              Start Your Journey Today <span>▶</span>
+            </a>
+          </div>
+        </section>
+
+        <section className="about section-block" id="about">
+          <div className="section-title">
+            <p>About Me</p>
+            <h2>About Shakib</h2>
           </div>
 
-          <aside className="hero-panel">
-            <div className="panel-top">
-              <span className="panel-dot"></span>
-              <p>Portfolio Status</p>
-            </div>
-
-            <h2>Live Developer Profile</h2>
-
-            <div className="panel-code">
+          <div className="about-layout">
+            <div>
               <p>
-                <span>const</span> candidate = {"{"}
+                I am a Computer Science student focused on software development,
+                backend development, mobile app development, machine learning,
+                and software quality assurance. I learn by building real
+                projects, fixing problems, and improving features step by step.
               </p>
-              <p> name: "Shakib",</p>
-              <p> focus: "Software + SQA",</p>
-              <p> stack: ["Java", "Python", "React"],</p>
-              <p>{"};"}</p>
+              <p>
+                My goal is to build a professional software and SQA career by
+                showing practical work through GitHub projects, clean portfolio
+                presentation, and continuous technical improvement.
+              </p>
             </div>
 
-            <div className="panel-progress">
-              <div>
-                <p>Project Readiness</p>
-                <strong>92%</strong>
-              </div>
-              <span>
-                <i></i>
-              </span>
+            <div className="about-image-card">
+              <h3>Apply skills to real projects — 100% evidence-based portfolio.</h3>
+              <p>
+                This portfolio is built to show my real work, project structure,
+                tools, and technical direction.
+              </p>
             </div>
-
-            <div className="panel-progress">
-              <div>
-                <p>SQA Preparation</p>
-                <strong>88%</strong>
-              </div>
-              <span>
-                <i className="short"></i>
-              </span>
-            </div>
-          </aside>
+          </div>
         </section>
 
         <section className="stats-band">
@@ -242,46 +243,15 @@ function App() {
           ))}
         </section>
 
-        <section className="about section-block" id="about">
-          <div className="section-title">
-            <p>About Me</p>
-            <h2>Explore my learning journey and technical direction.</h2>
-          </div>
-
-          <div className="about-layout">
-            <div className="about-card">
-              <h3>Who I am</h3>
-              <p>
-                I am a Computer Science student focused on software development,
-                backend development, mobile app development, machine learning,
-                and software quality assurance. I learn by building real
-                projects, fixing problems, and improving features step by step.
-              </p>
-              <a href="#contact">View Contact Details</a>
-            </div>
-
-            <div className="image-stack">
-              <div className="image-card card-a">
-                <h3>Academic Projects</h3>
-                <p>AI, algorithms, Java, networking, and research work.</p>
-              </div>
-              <div className="image-card card-b">
-                <h3>Career Preparation</h3>
-                <p>SQA tools, testing workflow, GitHub portfolio, and CV-ready skills.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="expertise section-block" id="expertise">
           <div className="section-title centered">
-            <p>Expertise & Services</p>
+            <p>GTGS Style Services</p>
             <h2>What I am building my career around.</h2>
           </div>
 
           <div className="expertise-grid">
             {expertise.map((item) => (
-              <article key={item.title} className="expertise-card">
+              <article className={`expertise-card ${item.color}`} key={item.title}>
                 <span>{item.icon}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -383,7 +353,7 @@ function App() {
 
         <footer className="footer">
           <div>
-            <h3>Shakib</h3>
+            <h3>Shakib Portfolio</h3>
             <p>Design Your Career with Code</p>
           </div>
 
