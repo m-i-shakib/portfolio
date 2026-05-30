@@ -196,6 +196,10 @@ function App() {
         </section>
 
         <section className="feature-strip">
+          <div className="feature-heading">
+            <h2>What I am building my career around.</h2>
+          </div>
+
           <div className="feature-cards">
             {expertise.map((item) => (
               <article className={`feature-card ${item.color}`} key={item.title}>
@@ -204,10 +208,6 @@ function App() {
                 <p>{item.text}</p>
               </article>
             ))}
-          </div>
-
-          <div className="feature-heading">
-            <h2>Explore software development and career opportunities.</h2>
           </div>
         </section>
 
