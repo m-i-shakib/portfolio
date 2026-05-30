@@ -153,9 +153,6 @@ function App() {
             <a href="#about">About</a>
             <a href="#expertise">Expertise</a>
             <a href="#projects">Projects</a>
-            <a href={codeforcesProfile} target="_blank" rel="noreferrer">
-              Codeforces
-            </a>
             <a href="#contact">Contact</a>
           </nav>
         </header>
@@ -363,9 +360,6 @@ function App() {
             <a href="#home">Home</a>
             <a href="#expertise">Expertise</a>
             <a href="#projects">Projects</a>
-            <a href={codeforcesProfile} target="_blank" rel="noreferrer">
-              Codeforces
-            </a>
             <a href="#contact">Contact</a>
           </div>
         </footer>
