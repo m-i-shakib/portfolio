@@ -2,11 +2,22 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: block;
   font-family: Arial, Helvetica, sans-serif;
   background: #0f172a;
   color: #e5e7eb;
+}
+
+#root {
+  width: 100%;
 }
 
 a {
@@ -87,6 +98,7 @@ h1 {
   padding: 14px 22px;
   border-radius: 12px;
   font-weight: 700;
+  display: inline-block;
 }
 
 .primary-btn {
@@ -99,6 +111,11 @@ h1 {
   color: #e5e7eb;
 }
 
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
 section {
   padding: 80px 8%;
 }
@@ -106,6 +123,7 @@ section {
 .about,
 .skills,
 .projects,
+.other-projects,
 .contact {
   background: #111827;
 }
@@ -122,6 +140,15 @@ h2 {
   font-size: 36px;
   margin-bottom: 24px;
   color: #ffffff;
+}
+
+.section-note {
+  max-width: 850px;
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: -10px;
+  margin-bottom: 32px;
 }
 
 .skill-list {
@@ -151,7 +178,7 @@ h2 {
   border: 1px solid #1e293b;
   padding: 24px;
   border-radius: 18px;
-  min-height: 310px;
+  min-height: 330px;
   transition: 0.25s;
 }
 
@@ -185,6 +212,28 @@ h2 {
   font-weight: 700;
 }
 
+.other-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.other-list a {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: #e5e7eb;
+  font-weight: 700;
+  transition: 0.25s;
+}
+
+.other-list a:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transform: translateY(-3px);
+}
+
 .contact-links {
   display: flex;
   gap: 14px;
@@ -213,6 +262,10 @@ h2 {
 
   h1 {
     font-size: 42px;
+  }
+
+  .intro {
+    font-size: 18px;
   }
 
   .project-grid {
