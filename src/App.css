@@ -315,7 +315,7 @@ a {
 .stats-band {
   padding: 48px 13%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   background: var(--pale);
 }
