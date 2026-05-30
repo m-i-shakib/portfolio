@@ -196,19 +196,18 @@ function App() {
         </section>
 
         <section className="feature-strip">
-          {expertise.map((item) => (
-            <article className={`feature-card ${item.color}`} key={item.title}>
-              <span>{item.icon}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
+          <div className="feature-cards">
+            {expertise.map((item) => (
+              <article className={`feature-card ${item.color}`} key={item.title}>
+                <span>{item.icon}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
 
           <div className="feature-heading">
-            <h2>Explore software development & career opportunities.</h2>
-            <a href="#projects" className="journey-btn">
-              Start Your Journey Today <span>▶</span>
-            </a>
+            <h2>Explore software development and career opportunities.</h2>
           </div>
         </section>
 
