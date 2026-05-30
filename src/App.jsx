@@ -4,23 +4,23 @@ import BinaryBackground from "./BinaryBackground";
 const featuredProjects = [
   {
     name: "Good Appetite Food Delivery App",
-    type: "AI Full-Stack",
+    category: "AI Full-Stack",
     description:
-      "A full-stack AI-based food delivery application with customer ordering, restaurant owner management, admin approval, and smart food recommendation features.",
+      "A full-stack AI-based food delivery app with customer ordering, restaurant management, admin approval, weather context, and smart food recommendations.",
     tech: ["React Native", "Spring Boot", "MySQL", "Flask", "Machine Learning"],
     github: "https://github.com/m-i-shakib/good-appetite-food-delivery",
   },
   {
     name: "Khudha Lagse",
-    type: "Food Delivery Web",
+    category: "Food Delivery Web",
     description:
-      "A food delivery web project with frontend and backend structure. It focuses on food browsing, order workflow, and restaurant-based service management.",
+      "Food delivery web project with frontend and backend workflow for browsing food, managing orders, and practicing restaurant service management.",
     tech: ["HTML", "CSS", "JavaScript", "Java", "Spring Boot"],
     github: "https://github.com/m-i-shakib/Khudha-Lagse",
   },
   {
     name: "Algorithm Visualizer",
-    type: "Java + Algorithms",
+    category: "Java + Algorithms",
     description:
       "A Java-based algorithm visualization project built to understand algorithm execution steps and improve problem-solving knowledge.",
     tech: ["Java", "CSS", "Algorithms"],
@@ -28,7 +28,7 @@ const featuredProjects = [
   },
   {
     name: "Freelancer Web",
-    type: "Web Platform",
+    category: "Web Platform",
     description:
       "A Bangladeshi freelancer platform practice project with frontend and backend folders, focused on service posting and web application structure.",
     tech: ["Python", "JavaScript", "HTML"],
@@ -36,17 +36,17 @@ const featuredProjects = [
   },
   {
     name: "AI Search Algorithms",
-    type: "Artificial Intelligence",
+    category: "Artificial Intelligence",
     description:
-      "Academic AI project covering search algorithms including BFS, DFS, UCS, Best First Search, and A* Search with practical implementation.",
-    tech: ["Python", "Artificial Intelligence", "Search Algorithms"],
+      "Academic AI project covering BFS, DFS, UCS, Best First Search, and A* Search with practical implementation.",
+    tech: ["Python", "AI", "Search Algorithms"],
     github: "https://github.com/m-i-shakib/ai-search-algorithms",
   },
   {
     name: "ATM Simulation",
-    type: "Java OOP",
+    category: "Java OOP",
     description:
-      "A Java console-based ATM simulation project showing account operations, transaction flow, and object-oriented programming practice.",
+      "Java console-based ATM simulation project showing account operations, transaction flow, and object-oriented programming practice.",
     tech: ["Java", "OOP"],
     github: "https://github.com/m-i-shakib/ATMSimulation",
   },
@@ -68,45 +68,55 @@ const otherProjects = [
   { name: "Goku", github: "https://github.com/m-i-shakib/goku" },
 ];
 
-const skills = [
-  "Java",
-  "Python",
-  "C",
-  "C++",
-  "JavaScript",
-  "React",
-  "React Native",
-  "Spring Boot",
-  "MySQL",
-  "Flask",
-  "Machine Learning",
-  "GitHub",
-  "Postman",
-  "Selenium",
-  "Manual Testing",
-  "API Testing",
-];
-
-const stats = [
-  { value: "19+", label: "GitHub Repositories" },
-  { value: "6+", label: "Featured Projects" },
-  { value: "10+", label: "Core Technologies" },
-  { value: "SQA", label: "Testing Focus" },
-];
-
-const services = [
+const expertise = [
   {
-    title: "Full-Stack Development",
-    text: "Frontend, backend, database, API integration, and project deployment practice.",
+    title: "Software Development",
+    text:
+      "Build web, mobile, and backend projects using React, React Native, Java, Spring Boot, Python, Flask, and MySQL.",
+    icon: "01",
   },
   {
-    title: "Software Testing",
-    text: "Manual testing, API testing with Postman, Selenium automation basics, and bug reporting.",
+    title: "SQA & Testing",
+    text:
+      "Practice manual testing, API testing with Postman, Selenium basics, test case design, bug reporting, and software quality workflow.",
+    icon: "02",
   },
   {
     title: "AI & Academic Projects",
-    text: "Search algorithms, machine learning practice, and research-focused project work.",
+    text:
+      "Work with AI search algorithms, machine learning concepts, research-oriented projects, and practical academic implementation.",
+    icon: "03",
   },
+];
+
+const process = [
+  {
+    step: "Step 1",
+    title: "Explore My Skills",
+    text: "Check my stack, tools, and software testing focus.",
+  },
+  {
+    step: "Step 2",
+    title: "Review Projects",
+    text: "Open featured projects and inspect the GitHub repositories.",
+  },
+  {
+    step: "Step 3",
+    title: "See My Practice Areas",
+    text: "Review backend, AI, algorithm, networking, and SQA-related work.",
+  },
+  {
+    step: "Step 4",
+    title: "Connect",
+    text: "Use GitHub or LinkedIn to view more details or contact me.",
+  },
+];
+
+const stats = [
+  { number: "19+", label: "GitHub Repositories" },
+  { number: "6+", label: "Featured Projects" },
+  { number: "15+", label: "Technical Skills" },
+  { number: "SQA", label: "Career Focus" },
 ];
 
 function App() {
@@ -115,246 +125,221 @@ function App() {
       <BinaryBackground />
 
       <main className="site-content">
-        <section className="hero" id="home">
-          <div className="hero-grid"></div>
-          <div className="hero-glass hero-glass-one"></div>
-          <div className="hero-glass hero-glass-two"></div>
-
-          <nav className="navbar">
-            <a className="brand" href="#home" aria-label="Go to home">
-              <span className="brand-mark">S</span>
-              <span>Shakib</span>
-            </a>
-
-            <div className="nav-links">
-              <a href="#about">About</a>
-              <a href="#skills">Skills</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
+        <header className="site-header">
+          <a href="#home" className="logo">
+            <span>MS</span>
+            <div>
+              <strong>Shakib</strong>
+              <small>Design Your Career with Code</small>
             </div>
+          </a>
+
+          <nav className="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
           </nav>
 
-          <div className="hero-layout">
-            <div className="hero-copy">
-              <div className="status-pill">
-                <span className="live-dot"></span>
-                Portfolio Live · Open to Software & SQA Opportunities
-              </div>
-
-              <p className="eyebrow">CSE Student · Software Developer · SQA Learner</p>
-
-              <h1>
-                Md Moinul Islam <span>Shakib</span>
-              </h1>
-
-              <p className="intro">
-                I build practical software projects using Java, Python, React,
-                React Native, Spring Boot, MySQL, Flask, and Machine Learning.
-                This portfolio presents my academic, backend, AI, web, and
-                programming projects.
-              </p>
-
-              <div className="hero-buttons">
-                <a href="#projects" className="primary-btn">
-                  View Projects
-                </a>
-
-                <a
-                  href="https://github.com/m-i-shakib"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="secondary-btn"
-                >
-                  GitHub Profile
-                </a>
-              </div>
-
-              <div className="stats-row">
-                {stats.map((item) => (
-                  <div className="stat-card" key={item.label}>
-                    <strong>{item.value}</strong>
-                    <span>{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="hero-visual" aria-label="Animated coding interface">
-              <div className="orbit orbit-one">
-                <span>React</span>
-              </div>
-              <div className="orbit orbit-two">
-                <span>Java</span>
-              </div>
-              <div className="orbit orbit-three">
-                <span>ML</span>
-              </div>
-
-              <div className="terminal-card">
-                <div className="terminal-top">
-                  <div className="terminal-dots">
-                    <span className="dot red"></span>
-                    <span className="dot yellow"></span>
-                    <span className="dot green"></span>
-                  </div>
-                  <p>shakib.dev / portfolio.jsx</p>
-                </div>
-
-                <div className="terminal-body">
-                  <p>
-                    <span className="code-key">const</span>{" "}
-                    <span className="code-var">developer</span> = {"{"}
-                  </p>
-                  <p className="code-indent">
-                    <span className="code-prop">name</span>:{" "}
-                    <span className="code-string">"Shakib"</span>,
-                  </p>
-                  <p className="code-indent">
-                    <span className="code-prop">role</span>:{" "}
-                    <span className="code-string">"Software Developer"</span>,
-                  </p>
-                  <p className="code-indent">
-                    <span className="code-prop">stack</span>: [
-                    <span className="code-string">"React"</span>,{" "}
-                    <span className="code-string">"Spring Boot"</span>,{" "}
-                    <span className="code-string">"Python"</span>],
-                  </p>
-                  <p className="code-indent">
-                    <span className="code-prop">testing</span>:{" "}
-                    <span className="code-string">"SQA + API Testing"</span>
-                  </p>
-                  <p>{"};"}</p>
-
-                  <p className="typing-line">deploy("portfolio")</p>
-
-                  <div className="dashboard-card">
-                    <div className="dashboard-row">
-                      <span>Build</span>
-                      <strong>92%</strong>
-                    </div>
-                    <div className="progress-bar">
-                      <div className="progress-fill fill-one"></div>
-                    </div>
-
-                    <div className="dashboard-row">
-                      <span>Testing</span>
-                      <strong>88%</strong>
-                    </div>
-                    <div className="progress-bar">
-                      <div className="progress-fill fill-two"></div>
-                    </div>
-
-                    <div className="mini-terminal">
-                      <span>$</span> npm run dev
-                      <em>Ready in 673ms</em>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="floating-card card-one">
-                <strong>API</strong>
-                <span>Postman · REST</span>
-              </div>
-              <div className="floating-card card-two">
-                <strong>Backend</strong>
-                <span>Spring Boot</span>
-              </div>
-              <div className="floating-card card-three">
-                <strong>AI</strong>
-                <span>Python · ML</span>
-              </div>
-            </div>
-          </div>
-
-          <a className="scroll-cue" href="#about" aria-label="Scroll to about">
-            <span></span>
+          <a href="#contact" className="header-cta">
+            Contact Me
           </a>
-        </section>
+        </header>
 
-        <section className="about section-shell" id="about">
-          <div className="section-heading">
-            <p>About</p>
-            <h2>Building skills through real projects, not just theory.</h2>
-          </div>
+        <section className="hero" id="home">
+          <div className="hero-content">
+            <p className="hero-kicker">Your Software & SQA Portfolio Gateway</p>
 
-          <div className="about-grid">
-            <p>
-              I am a Computer Science student interested in software development,
-              backend development, mobile app development, machine learning, and
-              software quality assurance. I like learning by building real projects,
-              fixing problems, and improving features step by step.
+            <h1>Build. Test. Improve. Grow with real projects.</h1>
+
+            <p className="hero-text">
+              I am Md Moinul Islam Shakib, a CSE student focused on software
+              development, backend engineering, AI projects, and software quality
+              assurance. This portfolio shows my project work, technical skills,
+              and career preparation.
             </p>
 
-            <div className="service-grid">
-              {services.map((item) => (
-                <article className="service-card" key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
+            <div className="hero-actions">
+              <a href="#projects" className="primary-btn">
+                View My Projects
+              </a>
+              <a
+                href="https://github.com/m-i-shakib"
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-btn"
+              >
+                Find My GitHub
+              </a>
+            </div>
+
+            <div className="hero-feature-grid">
+              <article>
+                <span>01</span>
+                <h3>Full-Stack Projects</h3>
+                <p>Frontend, backend, database, API, and deployment practice.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>AI-Powered Work</h3>
+                <p>Machine learning, AI search algorithms, and academic AI projects.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>SQA Career Focus</h3>
+                <p>Manual testing, API testing, Selenium basics, and bug reports.</p>
+              </article>
+            </div>
+          </div>
+
+          <aside className="hero-panel">
+            <div className="panel-top">
+              <span className="panel-dot"></span>
+              <p>Portfolio Status</p>
+            </div>
+
+            <h2>Live Developer Profile</h2>
+
+            <div className="panel-code">
+              <p>
+                <span>const</span> candidate = {"{"}
+              </p>
+              <p> name: "Shakib",</p>
+              <p> focus: "Software + SQA",</p>
+              <p> stack: ["Java", "Python", "React"],</p>
+              <p>{"};"}</p>
+            </div>
+
+            <div className="panel-progress">
+              <div>
+                <p>Project Readiness</p>
+                <strong>92%</strong>
+              </div>
+              <span>
+                <i></i>
+              </span>
+            </div>
+
+            <div className="panel-progress">
+              <div>
+                <p>SQA Preparation</p>
+                <strong>88%</strong>
+              </div>
+              <span>
+                <i className="short"></i>
+              </span>
+            </div>
+          </aside>
+        </section>
+
+        <section className="stats-band">
+          {stats.map((item) => (
+            <article key={item.label}>
+              <strong>{item.number}</strong>
+              <span>{item.label}</span>
+            </article>
+          ))}
+        </section>
+
+        <section className="about section-block" id="about">
+          <div className="section-title">
+            <p>About Me</p>
+            <h2>Explore my learning journey and technical direction.</h2>
+          </div>
+
+          <div className="about-layout">
+            <div className="about-card">
+              <h3>Who I am</h3>
+              <p>
+                I am a Computer Science student focused on software development,
+                backend development, mobile app development, machine learning,
+                and software quality assurance. I learn by building real
+                projects, fixing problems, and improving features step by step.
+              </p>
+              <a href="#contact">View Contact Details</a>
+            </div>
+
+            <div className="image-stack">
+              <div className="image-card card-a">
+                <h3>Academic Projects</h3>
+                <p>AI, algorithms, Java, networking, and research work.</p>
+              </div>
+              <div className="image-card card-b">
+                <h3>Career Preparation</h3>
+                <p>SQA tools, testing workflow, GitHub portfolio, and CV-ready skills.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="skills section-shell" id="skills">
-          <div className="section-heading">
-            <p>Skills</p>
-            <h2>My current technical stack.</h2>
+        <section className="expertise section-block" id="expertise">
+          <div className="section-title centered">
+            <p>Expertise & Services</p>
+            <h2>What I am building my career around.</h2>
           </div>
 
-          <div className="skill-list">
-            {skills.map((skill) => (
-              <span key={skill}>{skill}</span>
-            ))}
-          </div>
-        </section>
-
-        <section className="projects section-shell" id="projects">
-          <div className="section-heading">
-            <p>Projects</p>
-            <h2>Featured work from my GitHub.</h2>
-          </div>
-
-          <p className="section-note">
-            These are my strongest projects, showing full-stack development,
-            backend work, AI practice, Java programming, and software engineering
-            concepts.
-          </p>
-
-          <div className="project-grid">
-            {featuredProjects.map((project) => (
-              <article className="project-card" key={project.name}>
-                <div className="project-top">
-                  <span>{project.type}</span>
-                  <a href={project.github} target="_blank" rel="noreferrer">
-                    GitHub
-                  </a>
-                </div>
-
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-
-                <div className="tech-list">
-                  {project.tech.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
+          <div className="expertise-grid">
+            {expertise.map((item) => (
+              <article key={item.title} className="expertise-card">
+                <span>{item.icon}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <a href="#projects">Learn More</a>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="other-projects section-shell">
-          <div className="section-heading">
+        <section className="projects section-block" id="projects">
+          <div className="section-title centered">
+            <p>Featured Work</p>
+            <h2>Projects that show my practical skills.</h2>
+          </div>
+
+          <div className="project-grid">
+            {featuredProjects.map((project) => (
+              <article className="project-card" key={project.name}>
+                <div className="project-category">{project.category}</div>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+
+                <div className="tech-list">
+                  {project.tech.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  Open GitHub
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="process section-block">
+          <div className="section-title centered">
+            <p>How It Works</p>
+            <h2>How to review my portfolio.</h2>
+          </div>
+
+          <div className="process-grid">
+            {process.map((item) => (
+              <article key={item.step}>
+                <span>{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="other-projects section-block">
+          <div className="section-title centered">
             <p>Repository List</p>
             <h2>Other GitHub Projects</h2>
           </div>
-
-          <p className="section-note">
-            More practice projects covering programming, AI, networking, LaTeX,
-            and academic work.
-          </p>
 
           <div className="other-list">
             {otherProjects.map((project) => (
@@ -370,18 +355,14 @@ function App() {
           </div>
         </section>
 
-        <section className="contact section-shell" id="contact">
-          <div className="contact-card">
+        <section className="contact section-block" id="contact">
+          <div className="contact-banner">
             <div>
-              <p className="eyebrow">Contact</p>
-              <h2>Want to see my code or connect with me?</h2>
-              <p>
-                You can view my GitHub projects and professional profile using
-                the links below.
-              </p>
+              <p>Ready to view my work?</p>
+              <h2>Explore my GitHub projects and professional profile.</h2>
             </div>
 
-            <div className="contact-links">
+            <div className="contact-actions">
               <a
                 href="https://github.com/m-i-shakib"
                 target="_blank"
@@ -389,7 +370,6 @@ function App() {
               >
                 GitHub
               </a>
-
               <a
                 href="https://www.linkedin.com/in/moinul-islam-shakib-7687201b9/"
                 target="_blank"
@@ -400,6 +380,20 @@ function App() {
             </div>
           </div>
         </section>
+
+        <footer className="footer">
+          <div>
+            <h3>Shakib</h3>
+            <p>Design Your Career with Code</p>
+          </div>
+
+          <div className="footer-links">
+            <a href="#home">Home</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </footer>
       </main>
     </>
   );
