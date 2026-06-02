@@ -1,369 +1,260 @@
+import { useState } from "react";
 import "./App.css";
-import BinaryBackground from "./BinaryBackground";
 import profilePhoto from "./assets/shakib-profile.jpg";
 
-const codeforcesProfile = "https://codeforces.com/profile/m_i_shakib__";
+const github = "https://github.com/m-i-shakib";
+const linkedin = "https://www.linkedin.com/in/moinul-islam-shakib-7687201b9/";
+const codeforces = "https://codeforces.com/profile/m_i_shakib__";
 
-const featuredProjects = [
+const posts = [
   {
-    name: "Good Appetite Food Delivery App",
-    category: "AI Full-Stack",
-    description:
-      "A full-stack AI-based food delivery app with customer ordering, restaurant management, admin approval, weather context, and smart food recommendations.",
-    tech: ["React Native", "Spring Boot", "MySQL", "Flask", "Machine Learning"],
-    github: "https://github.com/m-i-shakib/good-appetite-food-delivery",
+    title: "Good Appetite Food Delivery App",
+    subtitle: "AI-powered full-stack food ordering system",
+    desc:
+      "A practical project with React Native, Spring Boot, MySQL, Flask, weather context, admin workflow, and food recommendation ideas.",
+    tag: "Full Stack",
+    link: "https://github.com/m-i-shakib/good-appetite-food-delivery",
   },
   {
-    name: "Khudha Lagse",
-    category: "Food Delivery Web",
-    description:
-      "Food delivery web project with frontend and backend workflow for browsing food, managing orders, and practicing restaurant service management.",
-    tech: ["HTML", "CSS", "JavaScript", "Java", "Spring Boot"],
-    github: "https://github.com/m-i-shakib/Khudha-Lagse",
+    title: "Khudha Lagse",
+    subtitle: "Food delivery web project",
+    desc:
+      "A web app practice project for browsing food, handling order flow, and learning frontend-backend structure.",
+    tag: "Web",
+    link: "https://github.com/m-i-shakib/Khudha-Lagse",
   },
   {
-    name: "Algorithm Visualizer",
-    category: "Java + Algorithms",
-    description:
-      "A Java-based algorithm visualization project built to understand algorithm execution steps and improve problem-solving knowledge.",
-    tech: ["Java", "CSS", "Algorithms"],
-    github: "https://github.com/m-i-shakib/algorithm-visualizer",
+    title: "Algorithm Visualizer",
+    subtitle: "Learning algorithms by visual execution",
+    desc:
+      "A Java project built to understand algorithm steps and improve problem-solving knowledge through visual practice.",
+    tag: "Java",
+    link: "https://github.com/m-i-shakib/algorithm-visualizer",
   },
   {
-    name: "Freelancer Web",
-    category: "Web Platform",
-    description:
-      "A Bangladeshi freelancer platform practice project with frontend and backend folders, focused on service posting and web application structure.",
-    tech: ["Python", "JavaScript", "HTML"],
-    github: "https://github.com/m-i-shakib/Freelancer-Web",
+    title: "AI Search Algorithms",
+    subtitle: "BFS, DFS, UCS, Best First Search, and A* Search",
+    desc:
+      "Academic AI work focused on search techniques, path finding, and intelligent state exploration.",
+    tag: "AI",
+    link: "https://github.com/m-i-shakib/ai-search-algorithms",
   },
   {
-    name: "AI Search Algorithms",
-    category: "Artificial Intelligence",
-    description:
-      "Academic AI project covering BFS, DFS, UCS, Best First Search, and A* Search with practical implementation.",
-    tech: ["Python", "AI", "Search Algorithms"],
-    github: "https://github.com/m-i-shakib/ai-search-algorithms",
+    title: "Freelancer Web",
+    subtitle: "Bangladeshi freelancer platform practice",
+    desc:
+      "A web platform idea with frontend and backend folders, focused on service posting and user workflow.",
+    tag: "Python",
+    link: "https://github.com/m-i-shakib/Freelancer-Web",
   },
   {
-    name: "ATM Simulation",
-    category: "Java OOP",
-    description:
-      "Java console-based ATM simulation project showing account operations, transaction flow, and object-oriented programming practice.",
-    tech: ["Java", "OOP"],
-    github: "https://github.com/m-i-shakib/ATMSimulation",
+    title: "ATM Simulation",
+    subtitle: "Java OOP console project",
+    desc:
+      "A Java console application for account operations, transaction flow, and object-oriented programming basics.",
+    tag: "OOP",
+    link: "https://github.com/m-i-shakib/ATMSimulation",
   },
 ];
 
-const otherProjects = [
-  { name: "Calculator", github: "https://github.com/m-i-shakib/Calculator" },
-  { name: "Basic AI", github: "https://github.com/m-i-shakib/basic-ai" },
-  { name: "Python All", github: "https://github.com/m-i-shakib/python-all" },
-  { name: "C Plus", github: "https://github.com/m-i-shakib/c-plus" },
-  { name: "C Code", github: "https://github.com/m-i-shakib/c-code" },
-  { name: "Networking", github: "https://github.com/m-i-shakib/networking" },
-  {
-    name: "Cisco Packet Tracer Labs",
-    github: "https://github.com/m-i-shakib/cisco-packet-tracer-labs",
-  },
-  { name: "Voting System", github: "https://github.com/m-i-shakib/Voting_System" },
-  { name: "Latex", github: "https://github.com/m-i-shakib/Latex" },
-  { name: "Goku", github: "https://github.com/m-i-shakib/goku" },
+const categories = [
+  "React",
+  "Java",
+  "Python",
+  "SQA",
+  "AI",
+  "Spring Boot",
+  "MySQL",
+  "Postman",
 ];
 
-const expertise = [
-  {
-    title: "Software Development",
-    text:
-      "Build web, mobile, and backend projects using React, React Native, Java, Spring Boot, Python, Flask, and MySQL.",
-    icon: "01",
-    color: "blue",
-  },
-  {
-    title: "SQA & Testing",
-    text:
-      "Practice manual testing, API testing with Postman, Selenium basics, test case design, bug reporting, and software quality workflow.",
-    icon: "02",
-    color: "green",
-  },
-  {
-    title: "AI & Academic Projects",
-    text:
-      "Work with AI search algorithms, machine learning concepts, research-oriented projects, and practical academic implementation.",
-    icon: "03",
-    color: "yellow",
-  },
-  {
-    title: "Career Portfolio",
-    text:
-      "Show projects, GitHub repositories, technical skills, and professional profile in a clean portfolio format.",
-    icon: "04",
-    color: "orange",
-  },
+const popular = [
+  ["GitHub Profile", "All source code and public repositories", github],
+  ["LinkedIn Profile", "Professional profile and career details", linkedin],
+  ["Codeforces Profile", "Problem-solving practice", codeforces],
+  ["Good Appetite", "Main full-stack AI project", "https://github.com/m-i-shakib/good-appetite-food-delivery"],
+  ["Algorithm Visualizer", "Java and algorithm practice", "https://github.com/m-i-shakib/algorithm-visualizer"],
 ];
 
-const process = [
-  {
-    step: "Step 1",
-    title: "Explore My Skills",
-    text: "Check my stack, tools, and software testing focus.",
-  },
-  {
-    step: "Step 2",
-    title: "Review Projects",
-    text: "Open featured projects and inspect the GitHub repositories.",
-  },
-  {
-    step: "Step 3",
-    title: "See Competitive Programming",
-    text: "Open my Codeforces profile and review my problem-solving practice.",
-  },
-  {
-    step: "Step 4",
-    title: "Connect",
-    text: "Use GitHub, LinkedIn, or Codeforces to view more details about my work.",
-  },
-];
-
-const stats = [
-  { number: "19+", label: "GitHub Repositories" },
-  { number: "6+", label: "Featured Projects" },
-  { number: "15+", label: "Technical Skills" },
+const courses = [
+  ["Manual Testing", "Test cases, bug reports, QA mindset"],
+  ["API Testing", "Postman, request/response validation"],
+  ["Automation Basics", "Selenium practice and scripts"],
 ];
 
 function App() {
+  const [dark, setDark] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [soundOff, setSoundOff] = useState(true);
+
   return (
-    <>
-      <BinaryBackground />
+    <main className={dark ? "page dark" : "page"}>
+      <div className="bg-orb orb-a"></div>
+      <div className="bg-orb orb-b"></div>
+      <div className="bg-orb orb-c"></div>
 
-      <main className="site-content">
-        <header className="site-header">
-          <a href="#home" className="logo">
-            <div className="logo-photo-wrap">
-              <img src={profilePhoto} alt="Md Moinul Islam Shakib" className="logo-photo" />
-            </div>
-            <div>
-              <strong>m_i_shakib_ Portfolio</strong>
-            </div>
-          </a>
+      <header className="top-nav">
+        <a href="#top" className="brand-mark">
+          <span className="brand-face">
+            <img src={profilePhoto} alt="Md Moinul Islam Shakib" />
+          </span>
+          <span className="brand-name">m_i_shakib_</span>
+        </a>
 
-          <nav className="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#expertise">Expertise</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </header>
+        <nav className="main-nav">
+          <a href="#categories">categories</a>
+          <a href="#courses">courses</a>
+          <a href="#goodies">goodies</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
 
-        <section className="hero" id="home">
-          <div className="hero-card">
-            <p>
-              I am Md Moinul Islam Shakib, a CSE student focused on software
-              development, backend engineering, AI projects, software quality
-              assurance, and problem-solving practice. This portfolio connects
-              my technical skills with real project evidence.
-            </p>
-
-            <div className="hero-actions">
-              <a href="#projects" className="primary-btn">
-                Find My Projects
-              </a>
-              <a
-                href="https://github.com/m-i-shakib"
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-btn"
-              >
-                View GitHub
-              </a>
-              <a
-                href={codeforcesProfile}
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-btn"
-              >
-                Codeforces
-              </a>
-            </div>
+      <section className="hero" id="top">
+        <div className="hero-illustration">
+          <div className="photo-card">
+            <img src={profilePhoto} alt="Md Moinul Islam Shakib" />
           </div>
-        </section>
+          <span className="sticker sticker-one">React</span>
+          <span className="sticker sticker-two">SQA</span>
+          <span className="sticker sticker-three">Java</span>
+        </div>
 
-        <section className="feature-strip">
-          <div className="feature-heading">
-            <h2>What I am building my career around.</h2>
+        <div className="hero-copy">
+          <p className="kicker">Software Developer · SQA Learner</p>
+          <h1>
+            Friendly projects and notes for my software journey.
+          </h1>
+          <p>
+            I’m Md Moinul Islam Shakib. I build academic, web, backend, AI,
+            testing, and programming projects, then keep the best work here like
+            a developer blog.
+          </p>
+        </div>
+      </section>
+
+      <section className="main-layout">
+        <div className="feed-column">
+          <div className="section-heading">
+            <h2>Articles and Tutorials</h2>
           </div>
 
-          <div className="feature-cards">
-            {expertise.map((item) => (
-              <article className={`feature-card ${item.color}`} key={item.title}>
-                <span>{item.icon}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="about section-block" id="about">
-          <div className="section-title">
-            <h2>About Shakib</h2>
-          </div>
-
-          <div className="about-layout">
-            <div>
-              <p>
-                I am a Computer Science student focused on software development,
-                backend development, mobile app development, machine learning,
-                software quality assurance, and competitive programming practice.
-              </p>
-              <p>
-                My goal is to build a professional software and SQA career by
-                showing practical work through GitHub projects, clean portfolio
-                presentation, Codeforces problem-solving practice, and continuous
-                technical improvement.
-              </p>
-            </div>
-
-            <div className="about-image-card">
-              <h3>Apply skills to real projects — 100% evidence-based portfolio.</h3>
-              <p>
-                This portfolio is built to show my real work, project structure,
-                tools, GitHub activity, and problem-solving direction.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="stats-band">
-          {stats.map((item) => (
-            <article key={item.label}>
-              <strong>{item.number}</strong>
-              <span>{item.label}</span>
-            </article>
-          ))}
-        </section>
-
-        <section className="expertise section-block" id="expertise">
-          <div className="section-title centered">
-            <h2>What I am building my career around.</h2>
-          </div>
-
-          <div className="expertise-grid">
-            {expertise.map((item) => (
-              <article className={`expertise-card ${item.color}`} key={item.title}>
-                <span>{item.icon}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <a href="#projects">Learn More</a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="projects section-block" id="projects">
-          <div className="section-title centered">
-            <h2>Projects that show my practical skills.</h2>
-          </div>
-
-          <div className="project-grid">
-            {featuredProjects.map((project) => (
-              <article className="project-card" key={project.name}>
-                <div className="project-category">{project.category}</div>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-
-                <div className="tech-list">
-                  {project.tech.map((tech) => (
-                    <span key={tech}>{tech}</span>
-                  ))}
-                </div>
-
-                <a href={project.github} target="_blank" rel="noreferrer">
-                  Open GitHub
+          <div className="post-feed">
+            {posts.map((post) => (
+              <article className="post" key={post.title}>
+                <a href={post.link} target="_blank" rel="noreferrer">
+                  <div className="post-top">
+                    <span>{post.tag}</span>
+                    <strong>Read more</strong>
+                  </div>
+                  <h3>{post.title}</h3>
+                  <h4>{post.subtitle}</h4>
+                  <p>{post.desc}</p>
                 </a>
               </article>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section className="process section-block">
-          <div className="section-title centered">
-            <h2>How to review my portfolio.</h2>
-          </div>
+        <aside className="side-column">
+          <section className="mini-panel" id="about">
+            <img src={profilePhoto} alt="Md Moinul Islam Shakib" />
+            <h2>Hi, I’m Shakib.</h2>
+            <p>
+              I focus on software development, SQA, AI projects, backend work,
+              and competitive programming.
+            </p>
+          </section>
 
-          <div className="process-grid">
-            {process.map((item) => (
-              <article key={item.step}>
-                <span>{item.step}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+          <section className="mini-panel" id="popular">
+            <h2>Popular Content</h2>
+            <div className="popular-list">
+              {popular.map((item, index) => (
+                <a href={item[2]} target="_blank" rel="noreferrer" key={item[0]}>
+                  <b>{index + 1}</b>
+                  <span>
+                    {item[0]}
+                    <small>{item[1]}</small>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        </aside>
+      </section>
 
-        <section className="other-projects section-block">
-          <div className="section-title centered">
-            <h2>Other GitHub Projects</h2>
-          </div>
+      <section className="category-section" id="categories">
+        <h2>Browse By Category</h2>
+        <div>
+          {categories.map((category) => (
+            <a href="#top" key={category}>{category}</a>
+          ))}
+        </div>
+      </section>
 
-          <div className="other-list">
-            {otherProjects.map((project) => (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                key={project.name}
-              >
-                {project.name}
-              </a>
-            ))}
-          </div>
-        </section>
+      <section className="course-section" id="courses">
+        <h2>Interactive Courses</h2>
+        <div className="course-grid">
+          {courses.map((course) => (
+            <article key={course[0]}>
+              <span>✦</span>
+              <h3>{course[0]}</h3>
+              <p>{course[1]}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section className="contact section-block" id="contact">
-          <div className="contact-banner">
+      <section className="newsletter" id="goodies">
+        <div>
+          <h2>Want to review my work?</h2>
+          <p>Open my GitHub, LinkedIn, or Codeforces profile.</p>
+        </div>
+
+        <div className="newsletter-links">
+          <a href={github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={codeforces} target="_blank" rel="noreferrer">Codeforces</a>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div>
+          <strong>m_i_shakib_</strong>
+          <p>Developer portfolio and project notes.</p>
+        </div>
+
+        <div className="footer-links">
+          <a href="#about">About</a>
+          <a href={github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={codeforces} target="_blank" rel="noreferrer">RSS / Codeforces</a>
+        </div>
+      </footer>
+
+      <div className="utility-bar">
+        <button type="button" onClick={() => setSearchOpen(true)}>Search</button>
+        <button type="button" onClick={() => setSoundOff((value) => !value)}>
+          {soundOff ? "Enable sounds" : "Disable sounds"}
+        </button>
+        <button type="button" onClick={() => setDark((value) => !value)}>
+          {dark ? "Activate light mode" : "Activate dark mode"}
+        </button>
+        <a href={codeforces} target="_blank" rel="noreferrer">RSS Feed</a>
+      </div>
+
+      {searchOpen && (
+        <div className="search-backdrop">
+          <div className="search-panel">
+            <button type="button" onClick={() => setSearchOpen(false)}>×</button>
+            <h2>Search</h2>
+            <input autoFocus placeholder="Search React, Java, SQA, AI..." />
             <div>
-              <h2>Explore my GitHub, LinkedIn, and Codeforces profile.</h2>
-            </div>
-
-            <div className="contact-actions">
-              <a
-                href="https://github.com/m-i-shakib"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/moinul-islam-shakib-7687201b9/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a href={codeforcesProfile} target="_blank" rel="noreferrer">
-                Codeforces
-              </a>
+              {categories.map((category) => <span key={category}>{category}</span>)}
             </div>
           </div>
-        </section>
-
-        <footer className="footer">
-          <div>
-            <h3>m_i_shakib_ Portfolio</h3>
-          </div>
-
-          <div className="footer-links">
-            <a href="#home">Home</a>
-            <a href="#expertise">Expertise</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </footer>
-      </main>
-    </>
+        </div>
+      )}
+    </main>
   );
 }
 
